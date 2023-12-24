@@ -26,6 +26,18 @@ a,
   transition: all 300ms ease;
 }
 
+.scroll-animation {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+/* CSS animation for slide-in effect */
+.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* DESKTOP NAV */
 
 nav,
