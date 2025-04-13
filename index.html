@@ -4,19 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <meta name="description" content="Mohamed Maged - DevOps Engineer Portfolio showcasing skills, projects, and experience" />
+    <meta name="keywords" content="DevOps, Portfolio, Mohamed Maged, Software Engineer, Web Development" />
+    <meta name="author" content="Mohamed Maged" />
+    <meta property="og:title" content="Mohamed Maged - DevOps Portfolio" />
+    <meta property="og:description" content="Professional portfolio showcasing DevOps skills and projects" />
+    <meta property="og:image" content="./assets/profile-pic.png" />
+    <meta property="og:url" content="https://sbakmaged.github.io/My-Portfolio" />
+    <title>Mohamed Maged - DevOps Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="icon" type="image/png" href="./assets/profile-pic.png" />
   </head>
   <body>
-    <nav id="desktop-nav">
-      <div class="logo">MagedOps</div>
+    <nav id="desktop-nav" aria-label="Main navigation">
+      <div class="logo" role="banner">MagedOps</div>
       <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <ul class="nav-links" role="navigation">
+          <li><a href="#about" aria-label="About section">About</a></li>
+          <li><a href="#experience" aria-label="Experience section">Experience</a></li>
+          <li><a href="#projects" aria-label="Projects section">Projects</a></li>
+          <li><a href="#contact" aria-label="Contact section">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -36,9 +44,15 @@
         </div>
       </div>
     </nav>
-    <section id="profile"  class="scroll-animation">
+    <section id="profile"  class="scroll-animation" aria-label="Profile section">
       <div class="section__pic-container">
-        <img src="./assets/profile-pic.png" alt="John Doe profile picture" />
+        <img 
+          src="./assets/profile-pic.png" 
+          alt="Mohamed Maged profile picture" 
+          loading="eager"
+          width="400"
+          height="400"
+        />
       </div>
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>

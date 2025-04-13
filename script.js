@@ -1,10 +1,22 @@
+// Debounce function to limit how often a function can be called
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
 function toggleMenu() {
   const menu = document.querySelector(".menu-links");
   const icon = document.querySelector(".hamburger-icon");
   menu.classList.toggle("open");
   icon.classList.toggle("open");
 }
-
 
 // Function to check if an element is in the viewport
 function isInViewport(element) {
@@ -29,10 +41,14 @@ function handleScrollAnimations() {
   });
 }
 
-// Event listener for scroll event
-window.addEventListener('scroll', () => {
-  handleScrollAnimations();
-});
+// Debounced scroll handler
+const debouncedScrollHandler = debounce(handleScrollAnimations, 100);
+
+// Event listeners
+window.addEventListener('scroll', debouncedScrollHandler);
+window.addEventListener('resize', debouncedScrollHandler);
 
 // Initial check for animations on page load
-handleScrollAnimations();
+document.addEventListener('DOMContentLoaded', () => {
+  handleScrollAnimations();
+});
